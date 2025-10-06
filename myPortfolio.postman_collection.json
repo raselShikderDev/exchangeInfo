@@ -1,0 +1,856 @@
+{
+	"info": {
+		"_postman_id": "be5b896d-b821-4661-ae69-1c12fa85c600",
+		"name": "myPortfolio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36958854"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Owner login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"myporfolio@owner.com\",\r\n    \"password\":\"Owner@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Owner logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "generate access token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJteXBvcmZvbGlvQG93bmVyLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc1OTQzNTUyMSwiZXhwIjoxNzU5NDM5MTIxfQ.gM6gvJphVRnq5L91kCACxHIzVX5vZbt-So0ZBIJyuMs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/generate-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"generate-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Alice Johnson\",\r\n    \"email\": \"alice.johnson@example.com\",\r\n    \"password\": \"hashedpassword123\",\r\n    \"skills\": [\"JavaScript\", \"TypeScript\", \"React\"],\r\n    \"address\": \"123 Main Street, New York, NY\",\r\n    \"phone\": 15551234567,\r\n    \"github\": \"https://github.com/alicejohnson\",\r\n    \"linkedin\": \"https://linkedin.com/in/alicejohnson\",\r\n    \"twitter\": \"https://twitter.com/alice_dev\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "projects",
+			"item": [
+				{
+					"name": "create project",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJteXBvcmZvbGlvQG93bmVyLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc1OTQyNjA2NSwiZXhwIjoxNzU5NDI5NjY1fQ.whiAkqO6iZcK4NjAs47UxBs_dKnJnsqjahn5xynKnp0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Personal Portfolio Website 5\",\r\n  \"description\": \"A portfolio website to showcase my projects, blogs, and achievements.\",\r\n  \"image\": \"https://example.com/images/portfolio.png\",\r\n  \"techStack\": [\"React\", \"TypeScript\", \"Tailwind CSS\", \"Node.js\", \"MongoDB\"],\r\n  \"liveUrl\": \"https://myportfolio.com\",\r\n  \"githubUrl\": \"https://github.com/username/portfolio\",\r\n  \"userId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/projects/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update project",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJteXBvcmZvbGlvQG93bmVyLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc1OTQxMzA1OSwiZXhwIjoxNzU5NDE2NjU5fQ.BzUJMYkrmxOSVXDRF-QB2dCnuXcIm9Dem5XGFwmIgkk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"liveUrl\": \"https://myportfolioupdated.com\",\r\n  \"githubUrl\": \"https://github.com/raseldev/portfolio\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/projects/edit/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete project",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJteXBvcmZvbGlvQG93bmVyLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc1OTQyNjA2NSwiZXhwIjoxNzU5NDI5NjY1fQ.whiAkqO6iZcK4NjAs47UxBs_dKnJnsqjahn5xynKnp0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/projects/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get project",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJteXBvcmZvbGlvQG93bmVyLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc1OTQyNjA2NSwiZXhwIjoxNzU5NDI5NjY1fQ.whiAkqO6iZcK4NjAs47UxBs_dKnJnsqjahn5xynKnp0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/projects/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all project",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJteXBvcmZvbGlvQG93bmVyLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc1OTQyNjA2NSwiZXhwIjoxNzU5NDI5NjY1fQ.whiAkqO6iZcK4NjAs47UxBs_dKnJnsqjahn5xynKnp0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/projects/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Blogs",
+			"item": [
+				{
+					"name": "create blog",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJteXBvcmZvbGlvQG93bmVyLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc1OTUxMTM2NiwiZXhwIjoxNzU5NTE0OTY2fQ.zom4me2OPc-dwj1sqgdMjQap6f4r4U_Ll20eIw-6sTc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"blog test purpose 02\",\r\n  \"content\": \"This article explains how AI tools are reshaping web development practices.\",\r\n  \"images\": [\r\n    \"https://example.com/images/ai-webdev.jpg\",\r\n    \"https://example.com/images/code.jpg\"\r\n  ],\r\n  \"published\": true,\r\n  \"publishedDate\": \"2025-10-03T10:30:00.000Z\",\r\n  \"slug\": \"ai-changing-web-development-02\",\r\n  \"authorId\": 1,\r\n  \"tags\": [\"AI\", \"Web Development\", \"Technology\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/blogs/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"blogs",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update blog",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJteXBvcmZvbGlvQG93bmVyLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc1OTUxMTM2NiwiZXhwIjoxNzU5NTE0OTY2fQ.zom4me2OPc-dwj1sqgdMjQap6f4r4U_Ll20eIw-6sTc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"content\": \"No content and causes unpublihses\",\r\n  \"published\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/blogs/update/ai-changing-web-development-01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"blogs",
+								"update",
+								"ai-changing-web-development-01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "publish blog",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJteXBvcmZvbGlvQG93bmVyLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc1OTUxMTM2NiwiZXhwIjoxNzU5NTE0OTY2fQ.zom4me2OPc-dwj1sqgdMjQap6f4r4U_Ll20eIw-6sTc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/blogs/publish/ai-changing-web-development-02",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"blogs",
+								"publish",
+								"ai-changing-web-development-02"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unpublish blog",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJteXBvcmZvbGlvQG93bmVyLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc1OTUxMTM2NiwiZXhwIjoxNzU5NTE0OTY2fQ.zom4me2OPc-dwj1sqgdMjQap6f4r4U_Ll20eIw-6sTc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"content\": \"No content and causes unpublihses\",\r\n  \"published\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/blogs/unpublish/ai-changing-web-development-02",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"blogs",
+								"unpublish",
+								"ai-changing-web-development-02"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete blog",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJteXBvcmZvbGlvQG93bmVyLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc1OTUxMTM2NiwiZXhwIjoxNzU5NTE0OTY2fQ.zom4me2OPc-dwj1sqgdMjQap6f4r4U_Ll20eIw-6sTc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/blogs/ai-changing-web-development-01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"blogs",
+								"ai-changing-web-development-01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get blog",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJteXBvcmZvbGlvQG93bmVyLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc1OTUxMTM2NiwiZXhwIjoxNzU5NTE0OTY2fQ.zom4me2OPc-dwj1sqgdMjQap6f4r4U_Ll20eIw-6sTc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/blogs/ai-changing-web-development-01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"blogs",
+								"ai-changing-web-development-01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all blogs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJteXBvcmZvbGlvQG93bmVyLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc1OTUxMTM2NiwiZXhwIjoxNzU5NTE0OTY2fQ.zom4me2OPc-dwj1sqgdMjQap6f4r4U_Ll20eIw-6sTc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/blogs/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"blogs",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "blogs stast",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJteXBvcmZvbGlvQG93bmVyLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc1OTU5MjgyOSwiZXhwIjoxNzU5NTk2NDI5fQ.6tAII2J9a0siiVzWqfz3ogMK9JaElxFkiOlFnWgPf3g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/blogs/stats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"blogs",
+								"stats"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "work experience",
+			"item": [
+				{
+					"name": "create workExp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJteXBvcmZvbGlvQG93bmVyLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc1OTQzMTU3MCwiZXhwIjoxNzU5NDM1MTcwfQ.um0iSbyLzrVfUMxKW2XIgAF0WnsteotfPHFF7MaXVfA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyName\": \"DeepSeek\",\r\n    \"role\": \"Senior Software Engineer\",\r\n    \"descreption\": \"Worked on building AI-powered applications.\",\r\n    \"userId\": 1,\r\n    \"startDate\": \"2022-01-10T00:00:00.000Z\",\r\n    \"endDate\": \"2023-08-15T00:00:00.000Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/work-experience/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"work-experience",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update workExp",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJteXBvcmZvbGlvQG93bmVyLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc1OTQzMTU3MCwiZXhwIjoxNzU5NDM1MTcwfQ.um0iSbyLzrVfUMxKW2XIgAF0WnsteotfPHFF7MaXVfA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"role\": \"Senior Data Scientist\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/work-experience/edit/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"work-experience",
+								"edit",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete workExp",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJteXBvcmZvbGlvQG93bmVyLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc1OTQzMTU3MCwiZXhwIjoxNzU5NDM1MTcwfQ.um0iSbyLzrVfUMxKW2XIgAF0WnsteotfPHFF7MaXVfA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/work-experience/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"work-experience",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get workExp",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJteXBvcmZvbGlvQG93bmVyLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc1OTQzMTU3MCwiZXhwIjoxNzU5NDM1MTcwfQ.um0iSbyLzrVfUMxKW2XIgAF0WnsteotfPHFF7MaXVfA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/work-experience/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"work-experience",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all workExp",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJteXBvcmZvbGlvQG93bmVyLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc1OTQzMTU3MCwiZXhwIjoxNzU5NDM1MTcwfQ.um0iSbyLzrVfUMxKW2XIgAF0WnsteotfPHFF7MaXVfA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/work-experience/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"work-experience",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
