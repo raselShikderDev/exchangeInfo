@@ -1,0 +1,39 @@
+No problem at all 👍 — you don’t need a USB drive for the portable version.
+
+You can simply keep it in a hidden folder on your computer’s hard drive, like:
+
+C:\Users\<yourname>\AppData\Local\SystemTools\nodejs-portable
+
+
+(or any folder you like, even on the Desktop if you plan to delete it later).
+
+💡 Here’s how you can use Node.js portable (no install, no admin, easy to delete):
+
+Go to https://nodejs.org/en/download
+
+Scroll down to “Other Downloads” → “Windows Binary (.zip)”
+
+Choose Windows 64-bit ZIP if your system is 64-bit.
+
+Download the ZIP file (around 35–40 MB).
+
+Right-click it → Extract All... → choose your private folder (e.g. C:\SystemTools\nodejs-portable).
+
+Open that folder → double-click node.exe to check it works.
+
+(Optional) open cmd in that folder and type:
+
+node -v
+npm -v
+
+
+to confirm it runs fine.
+
+That’s it ✅
+You can now:
+
+Run Node.js directly from that folder.
+
+Delete the folder anytime to remove all traces.
+
+Hide it (Right-click → Properties → Hidden).
