@@ -37,3 +37,86 @@ Run Node.js directly from that folder.
 Delete the folder anytime to remove all traces.
 
 Hide it (Right-click → Properties → Hidden).
+
+
+
+1️⃣ Use Relative Paths with %~dp0
+
+%~dp0 is the folder where the batch file itself lives.
+
+This is key to portability because it doesn’t rely on drive letters or user names.
+
+Example:
+
+set "PATH=%~dp0PortableGit\cmd;%~dp0PortableGit\bin;%~dp0nodejs;%~dp0bun\bin;%PATH%"
+
+
+Works as long as the folder structure relative to the batch file stays the same:
+
+SystemTools\
+│
+├── StartPortableDev.bat
+├── PortableGit\
+├── nodejs\
+├── bun\
+└── vscode\
+
+2️⃣ Make Your Setup Fully Portable Across PCs
+Folder structure (all relative to batch file):
+SystemTools\
+├─ StartPortableDev.bat
+├─ PortableGit\
+│  └─ cmd, bin, etc.
+├─ nodejs\
+│  └─ node.exe
+├─ bun\
+│  └─ bin\bun.exe
+└─ vscode\
+   └─ Code.exe
+
+Key rule:
+
+Never move StartPortableDev.bat outside this folder.
+
+Always launch VS Code through this batch file.
+
+3️⃣ Optional: Dynamic Subfolder Detection
+
+If you rename folders or have multiple versions, you can dynamically detect paths:
+
+@echo off
+setlocal
+
+:: Detect batch folder
+set "BASE=%~dp0"
+
+:: Add tools to PATH
+set "PATH=%BASE%PortableGit\cmd;%BASE%PortableGit\bin;%BASE%nodejs;%BASE%bun\bin;%PATH%"
+
+:: Test
+where git
+where node
+where bun
+
+:: Launch VS Code
+start "" "%BASE%vscode\Code.exe"
+endlocal
+
+
+%BASE% automatically resolves the folder containing the batch file.
+
+Works regardless of username, drive letter, or PC.
+
+4️⃣ Usage Notes
+
+Copy the entire SystemTools folder to any PC.
+
+Launch StartPortableDev.bat — all tools work immediately.
+
+No system installation required.
+
+Bun, Node, Git, VS Code are all self-contained.
+
+If you want, I can create a ready-to-use portable folder + batch file template that will work on any PC, any drive, any user without touching PATH manually.
+
+Do you want me to do that?
