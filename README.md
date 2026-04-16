@@ -1,5 +1,5 @@
 ## **1. Show existing databases**
-
+#
 ```sql
 SHOW DATABASES;
 ```
